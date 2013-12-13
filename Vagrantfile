@@ -3,11 +3,9 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
 
   config.vm.hostname = "drupal.dev"
-
-  config.vm.network :private_network, ip: "33.33.33.11"
+222
+  config.vm.network :private_network, ip: "33.33.33.10"
     config.ssh.forward_agent = true
-
-  config.vm.network :forwarded_port, guest: 3306, host: 3306
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
@@ -16,10 +14,14 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "./sites", "/var/www", :nfs => true
   config.vm.provision :shell, :inline => "sudo apt-get update"
-
   config.vm.provision :puppet do |puppet|
+    puppet.facter = {
+      "ssh_username" => "vagrant"
+    }
+
     puppet.manifests_path = "manifests"
-    puppet.module_path = "modules"
-    puppet.options = ['--verbose', "--hiera_config /vagrant/hiera.yaml"]
+    puppet.options = ["--verbose", "--hiera_config /vagrant/hiera.yaml"]
   end
+
+  config.ssh.username = "vagrant"
 end
