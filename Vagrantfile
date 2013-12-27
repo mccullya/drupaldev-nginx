@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "./sites", "/var/www", :nfs => true
-  #config.vm.provision :shell, :inline => "sudo apt-get update"
+  config.vm.provision :shell, :inline => "sudo apt-get update"
   config.vm.provision :puppet do |puppet|
     puppet.facter = {
       "ssh_username" => "vagrant"

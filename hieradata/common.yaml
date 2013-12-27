@@ -9,3 +9,4 @@ server:
         - htop
         - memcached
         - unzip
+        - python-software-properties
