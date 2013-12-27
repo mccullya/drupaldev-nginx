@@ -18,7 +18,8 @@ class { 'php':
   service             => 'php5-fpm',
   service_autorestart => false,
   config_file         => '/etc/php5/fpm/php.ini',
-  module_prefix       => ''
+  module_prefix       => '',
+  require             => Class["apt"],
 }
 
 php::module {
@@ -77,11 +78,11 @@ class { 'ruby':
 }
 
 package { [
-'compass',
+  'compass',
 ]:
-provider => 'gem',
-ensure   => 'installed',
-require  => Package[[rubygems]]
+  provider => 'gem',
+  ensure   => 'installed',
+  require  => Package[[rubygems]]
 }
 
 class { 'mailcatcher': }
