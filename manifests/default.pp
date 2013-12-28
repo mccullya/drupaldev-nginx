@@ -83,17 +83,17 @@ php::pear::module { 'Console_Table':
   use_package => 'no',
 }
 
-class { 'ruby':
-  gems_version  => 'latest'
-}
-
-package { [
-  'compass',
-]:
-  provider => 'gem',
-  ensure   => 'installed',
-  require  => Package[[rubygems]]
-}
+#class { 'ruby':
+#  gems_version  => 'latest'
+#}
+#
+#package { [
+#  'compass',
+#]:
+#  provider => 'gem',
+#  ensure   => 'installed',
+#  require  => Package[[rubygems]]
+#}
 
 class { 'mailcatcher': }
 
