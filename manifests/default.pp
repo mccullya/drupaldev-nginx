@@ -11,6 +11,16 @@ class {'apt':
 
 apt::ppa { 'ppa:rip84/php5': }
 
+class { 'rvm': version => '1.25.7' }
+
+rvm::system_user { vagrant: }
+
+rvm_system_ruby {
+  'ruby-1.9.3-p484':
+  ensure => 'present',
+  default_use => true;
+}
+
 class { 'nginx': }
 
 class { 'php':
@@ -56,9 +66,9 @@ class { 'xdebug':
   service => 'nginx',
 }
 
-class { 'composer':
-  require => Package['php5-fpm', 'curl'],
-}
+#class { 'composer':
+#  require => Package['php5-fpm', 'curl'],
+#}
 
 class { '::mysql::server':
   root_password => 'drupaldev'
