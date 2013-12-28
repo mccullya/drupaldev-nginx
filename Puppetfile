@@ -5,11 +5,12 @@ mod "puppetlabs/stdlib", "4.1.0"
 mod "puppetlabs/vcsrepo", "0.1.2"
 mod "puppetlabs/ruby", "0.1.0"
 mod "puppetlabs/mysql", "2.0.0"
+mod "maestrodev/rvm", "1.2.0"
 
 mod "jfryman/nginx", "0.0.5"
 
 mod "mailcatcher",
-  :git => "git://github.com/ricksteckles/puppet-mailcatcher"
+  :git => "git://github.com/mikebell/puppet-mailcatcher"
 
 mod "xhprof",
   :git => "git://github.com/mikebell/puppet-xhprof"
