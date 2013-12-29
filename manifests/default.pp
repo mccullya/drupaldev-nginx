@@ -47,6 +47,8 @@ apt::ppa { 'ppa:rip84/php5': }
 
 class { 'nginx': }
 
+$nginx = hiera('nginx', false)
+
 class { 'php':
   package             => 'php5-fpm',
   service             => 'php5-fpm',
@@ -58,14 +60,7 @@ class { 'php':
 
 php::module {
   [
-  'php5-mysql',
-  'php5-cli',
-  'php5-curl',
-  'php5-intl',
-  'php5-mcrypt',
-  'php5-gd',
-  'php-apc',
-  'php5-memcached'
+    $nginx['phpmodules']
   ]:
   notify  => Service["php5-fpm"]
 }

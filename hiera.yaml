@@ -4,5 +4,6 @@
   :datadir: '/vagrant/hieradata'
 :hierarchy:
   - common
+  - nginx
   - sites
 :logger: console
