@@ -102,6 +102,13 @@ php::pear::module { 'Console_Table':
   use_package => 'no',
 }
 
+php::ini { 'php.ini':
+  value => [
+    $nginx['phpini']
+  ],
+  require => Package["php5-cli"]
+}
+
 #class { 'ruby':
 #  gems_version  => 'latest'
 #}
