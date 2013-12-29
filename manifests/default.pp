@@ -11,15 +11,39 @@ class {'apt':
 
 apt::ppa { 'ppa:rip84/php5': }
 
-class { 'rvm': version => '1.25.7' }
-
-rvm::system_user { vagrant: }
-
-rvm_system_ruby {
-  'ruby-1.9.3-p484':
-  ensure => 'present',
-  default_use => true;
-}
+#class { 'rvm': version => '1.25.7' }
+#
+#rvm::system_user { vagrant: }
+#
+#rvm_system_ruby {
+#  'ruby-1.9.3-p484':
+#  ensure => 'present',
+#  default_use => true;
+#}
+#
+#rvm_gemset {
+#  "ruby-1.9.3-p484@drupal":
+#  ensure => present,
+#  require => Rvm_system_ruby['ruby-1.9.3-p484'];
+#}
+#
+#rvm_gem {
+#  'ruby-1.9.3-p484@drupal/compass':
+#  ensure => '0.12.2',
+#  require => Rvm_gemset['ruby-1.9.3-p484@drupal'];
+#}
+#
+#rvm_gem {
+#  'ruby-1.9.3-p484@drupal/bundler':
+#  ensure => '1.5.1',
+#  require => Rvm_gemset['ruby-1.9.3-p484@drupal'];
+#}
+#
+#rvm_gem {
+#  'ruby-1.9.3-p484@drupal/puppet':
+#  ensure => '3.1.1',
+#  require => Rvm_gemset['ruby-1.9.3-p484@drupal'];
+#}
 
 class { 'nginx': }
 
