@@ -109,18 +109,6 @@ php::ini { 'php.ini':
   require => Package["php5-cli"]
 }
 
-#class { 'ruby':
-#  gems_version  => 'latest'
-#}
-#
-#package { [
-#  'compass',
-#]:
-#  provider => 'gem',
-#  ensure   => 'installed',
-#  require  => Package[[rubygems]]
-#}
-
 class { 'mailcatcher': }
 
 class { 'xhprof': }
