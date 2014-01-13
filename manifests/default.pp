@@ -112,3 +112,11 @@ php::ini { 'php.ini':
 class { 'mailcatcher': }
 
 class { 'xhprof': }
+
+if $nginx_values == undef {
+  $nginx_values = hiera('nginx', false)
+}
+
+if count($nginx_values['vhosts']) > 0 {
+create_resources(nginx_vhost, $nginx_values['vhosts'])
+}
