@@ -25,8 +25,8 @@ Vagrant configuration for Drupal Development. Supports Drupal 6/7/8. Built in Dr
 2. `cd drupaldev-nginx`
 3. `librarian-puppet install`
 3. `mkdir sites`
-4. `cp manifests/example.pp manifests/devsites.pp`
-5. Amend manifests/devsites.pp as required to desired server/virtualhost name and db details
+4. `cp hieradata/example.yaml hieradata/sites.yaml`
+5. Amend hieradata/sites.yaml as required to desired server/virtualhost name and db details
 6. `vagrant up`
 
 #VM Info
