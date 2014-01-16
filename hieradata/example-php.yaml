@@ -1,0 +1,7 @@
+---
+phpextra:
+  phpversion: 5.3
+  phpmodules:
+    - php5-mymodule
+  phpini:
+    - memory_limit = 256M
