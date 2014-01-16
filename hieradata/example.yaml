@@ -1,15 +1,15 @@
 ---
-#sites:
-#    vhosts:
-#        example.dev:
-#            server_name: example.dev
-#            server_aliases:
-#                - www.example.dev
-#            www_root: /var/www/example.dev
-#            listen_port: '80'
-#            index_files:
-#                - index.html
-#                - index.htm
-#                - index.php
-#            envvars:
-#
+sites:
+    vhosts:
+        example.dev:
+            server_name: example.dev
+            server_aliases:
+                - www.example.dev
+            www_root: /var/www/example.dev
+            listen_port: '80'
+            index_files:
+                - index.html
+                - index.htm
+                - index.php
+            envvars:
+
