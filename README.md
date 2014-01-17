@@ -7,6 +7,8 @@ Dev - [![Build Status](http://r2.ayil.co.uk:8080/buildStatus/icon?job=drupaldev-
 
 Vagrant configuration for Drupal Development. Supports Drupal 6/7/8. Built in Drush and Composer.
 
+Need Help? Consult the [wiki](https://github.com/mikebell/drupaldev-nginx/wiki) first before submitting an issue.
+
 #Tools
 2. Easier handling of vhosts and dbs (see example.pp)
 3. Drush
