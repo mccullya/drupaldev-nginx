@@ -35,6 +35,7 @@ Vagrant configuration for Drupal Development. Supports Drupal 6/7/8. Built in Dr
 * Default IP 33.33.33.10
 * Sites built as *.drupal.dev (use dnsmasq)
 * Ubuntu 12.04
+* Mysql root password: drupaldev
 
 #XHProf Details
 * Visible at xhprof.drupal.dev
