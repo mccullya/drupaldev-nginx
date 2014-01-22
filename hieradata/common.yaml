@@ -10,3 +10,4 @@ server:
     - memcached
     - unzip
     - python-software-properties
+    - vim
