@@ -1,15 +1,24 @@
 ---
 sites:
-    vhosts:
-        example.dev:
-            server_name: example.dev
-            server_aliases:
-                - www.example.dev
-            www_root: /var/www/example.dev
-            listen_port: '80'
-            index_files:
-                - index.html
-                - index.htm
-                - index.php
-            envvars:
-
+  vhosts:
+    example.dev:
+      server_name: example.dev
+      server_aliases:
+        - www.example.dev
+      www_root: /var/www/example.dev
+      listen_port: '80'
+      index_files:
+        - index.html
+        - index.htm
+        - index.php
+      envvars:
+        - 'APP_ENV dev'
+  databases:
+    example.dev:
+      grant:
+        - ALL
+      host: localhost
+      name: example
+      user: example
+      password: example
+      sql_file: ''

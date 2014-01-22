@@ -83,12 +83,16 @@ class { 'mailcatcher': }
 
 class { 'xhprof': }
 
-if $nginx_values == undef {
-  $nginx_values = hiera('sites', false)
+if $site_values == undef {
+  $site_values = hiera('sites', false)
 }
 
-if count($nginx_values['vhosts']) > 0 {
-  create_resources(nginx_vhost, $nginx_values['vhosts'])
+if count($site_values['vhosts']) > 0 {
+  create_resources(nginx_vhost, $site_values['vhosts'])
+}
+
+if count($site_values['databases']) > 0 {
+  create_resources(mysql_db, $site_values['databases'])
 }
 
 define nginx_vhost (
