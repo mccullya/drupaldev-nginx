@@ -9,7 +9,7 @@ class {'apt':
   always_apt_update => true,
 }
 
-apt::ppa { 'ppa:rip84/php5': }
+apt::ppa { 'ppa:ondrej/php5-oldstable': }
 
 class { 'rvm': version => '1.25.7' }
 
