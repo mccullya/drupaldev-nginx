@@ -73,9 +73,7 @@ php::pear::module { 'Console_Table':
 }
 
 php::ini { 'php.ini':
-  value => [
-    $nginx['phpini']
-  ],
+  value => $nginx['phpini'],
   require => Package["php5-cli"]
 }
 
