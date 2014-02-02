@@ -55,9 +55,9 @@ class { 'xdebug':
   service => 'nginx',
 }
 
-#class { 'composer':
-#  require => Package['php5-fpm', 'curl'],
-#}
+class { 'composer':
+  require => Package['php5-fpm', 'curl'],
+}
 
 class { '::mysql::server':
   root_password => 'drupaldev'
