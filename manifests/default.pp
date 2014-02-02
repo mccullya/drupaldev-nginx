@@ -6,7 +6,7 @@ $server_values = hiera('server', false)
 ensure_packages( $server_values['packages'] )
 
 class {'apt':
-  always_apt_update => true,
+  always_apt_update => false,
 }
 
 apt::ppa { 'ppa:ondrej/php5-oldstable': }
