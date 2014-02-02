@@ -142,6 +142,10 @@ define nginx_vhost (
     },
     notify              => Class['nginx::service'],
   }
+
+  file { $www_root:
+    ensure => "directory",
+  }
 }
 
 define mysql_db (
