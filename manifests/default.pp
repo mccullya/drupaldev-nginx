@@ -85,12 +85,16 @@ if $site_values == undef {
   $site_values = hiera('sites', false)
 }
 
+if $mysql_values == undef {
+  $mysql_values = hiera('mysql', false)
+}
+
 if count($site_values['vhosts']) > 0 {
   create_resources(nginx_vhost, $site_values['vhosts'])
 }
 
-if count($site_values['databases']) > 0 {
-  create_resources(mysql_db, $site_values['databases'])
+if is_hash($mysql_values['databases']) and count($mysql_values['databases']) > 0 {
+  create_resources(mysql_db, $mysql_values['databases'])
 }
 
 define nginx_vhost (
@@ -133,11 +137,10 @@ define nginx_vhost (
     www_root            => $www_root,
     location_cfg_append => {
       'fastcgi_split_path_info' => '^(.+\.php)(/.+)$',
-      #'fastcgi_param'           => $fastcgi_param,
       'fastcgi_param'           => 'PATH_INFO $fastcgi_path_info',
       'fastcgi_param '           => 'PATH_TRANSLATED $document_root$fastcgi_path_info',
       'fastcgi_param  '           => 'SCRIPT_FILENAME $document_root$fastcgi_script_name',
-#      'fastcgi_pass'            => $fastcgi_pass,
+      'fastcgi_pass'            => 'unix:/var/run/php5-fpm.sock',
       'fastcgi_index'           => 'index.php',
       'include'                 => 'fastcgi_params'
     },
