@@ -9,7 +9,6 @@ sites:
             listen_port: '80'
             index_files:
                 - index.php
-mysql:
     databases:
         example:
             grant:

@@ -85,16 +85,12 @@ if $site_values == undef {
   $site_values = hiera('sites', false)
 }
 
-if $mysql_values == undef {
-  $mysql_values = hiera('mysql', false)
-}
-
 if count($site_values['vhosts']) > 0 {
   create_resources(nginx_vhost, $site_values['vhosts'])
 }
 
-if is_hash($mysql_values['databases']) and count($mysql_values['databases']) > 0 {
-  create_resources(mysql_db, $mysql_values['databases'])
+if is_hash($site_values['databases']) and count($site_values['databases']) > 0 {
+  create_resources(mysql_db, $site_values['databases'])
 }
 
 define nginx_vhost (
