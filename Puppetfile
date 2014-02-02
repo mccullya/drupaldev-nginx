@@ -13,6 +13,7 @@ mod "mailcatcher",
 
 mod "xhprof",
   :git => "git://github.com/mikebell/puppet-xhprof"
+  :ref => "1.0"
 
 mod "xdebug",
   :git => "git://github.com/puphpet/puphpet-xdebug.git",
