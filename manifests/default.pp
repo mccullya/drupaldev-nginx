@@ -117,13 +117,6 @@ define nginx_vhost (
     try_files   => ['$uri', '$uri/', "/${try_files}?\$args"],
   }
 
-  $fastcgi_param = concat(
-    [
-      'PATH_INFO $fastcgi_path_info',
-      'PATH_TRANSLATED $document_root$fastcgi_path_info',
-      'SCRIPT_FILENAME $document_root$fastcgi_script_name',
-    ], $envvars)
-
   nginx::resource::location { "${server_name}-php":
     ensure              => present,
     vhost               => $server_name,
