@@ -79,7 +79,7 @@ php::ini { 'php.ini':
 
 class { 'mailcatcher': }
 
-class { 'xhprof': }
+#class { 'xhprof': }
 
 if $site_values == undef {
   $site_values = hiera('sites', false)
