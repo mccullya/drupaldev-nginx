@@ -12,7 +12,7 @@ mod "mailcatcher",
   :git => "git://github.com/ricksteckles/puppet-mailcatcher"
 
 mod "xhprof",
-  :git => "git://github.com/mikebell/puppet-xhprof"
+  :git => "git://github.com/mikebell/puppet-xhprof",
   :ref => "1.0"
 
 mod "xdebug",
