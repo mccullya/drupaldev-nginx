@@ -30,3 +30,7 @@ mod "puppi",
 mod "composer",
   :git => "git://github.com/puphpet/puppet-composer",
   :ref => "1.0.0"
+
+mod "solr",
+  :git => "git://github.com/DarkHorseComics/puppet-solr",
+  :ref => "43059f89d4916f3f0cb43fe50fd7a6effd62f2cc"

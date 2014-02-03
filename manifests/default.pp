@@ -161,3 +161,6 @@ define mysql_db (
   }
 }
 
+class { solr:
+  cores => [ 'development' ]
+}
