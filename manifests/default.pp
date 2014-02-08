@@ -165,6 +165,6 @@ class { solr:
   cores => [ 'development' ]
 }
 
-file { '/var/www/db':
-  ensure => "directory",
+class { 'automysqlbackup':
+  backup_dir           => '/home/vagrant/db'
 }

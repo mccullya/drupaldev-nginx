@@ -34,3 +34,7 @@ mod "composer",
 mod "solr",
   :git => "git://github.com/DarkHorseComics/puppet-solr",
   :ref => "43059f89d4916f3f0cb43fe50fd7a6effd62f2cc"
+
+mod "automysqlbackup",
+  :git => "git://github.com/nextrevision/puppet-automysqlbackup",
+  :ref => "752b8b9d95725112e97b5b3faa15ac369399c4b0"
