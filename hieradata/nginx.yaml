@@ -20,3 +20,4 @@ nginx:
     - xdebug.remote_enable = 1
     - xdebug.remote_handler = "dbgp"
     - xdebug.remote_port = 9000
+    - apc.shm_size = 128M
