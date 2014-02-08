@@ -164,3 +164,7 @@ define mysql_db (
 class { solr:
   cores => [ 'development' ]
 }
+
+file { '/var/www/db':
+  ensure => "directory",
+}
