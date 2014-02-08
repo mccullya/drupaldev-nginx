@@ -7,7 +7,7 @@ mod "puppetlabs/ruby", "0.1.0"
 mod "puppetlabs/mysql", "2.0.0"
 mod "maestrodev/rvm", "1.2.0"
 
-mod "jfryman/nginx", "0.0.5"
+mod "jfryman/nginx", "0.0.7"
 
 mod "mailcatcher",
   :git => "git://github.com/mikebell/puppet-mailcatcher"
