@@ -28,8 +28,8 @@ mod "puppi",
   :ref => "v2.1.7"
 
 mod "composer",
-  :git => "git://github.com/puphpet/puppet-composer",
-  :ref => "1.0.0"
+  :git => "git://github.com/tPl0ch/puppet-composer",
+  :ref => "1.2.1"
 
 mod "solr",
   :git => "git://github.com/DarkHorseComics/puppet-solr",
