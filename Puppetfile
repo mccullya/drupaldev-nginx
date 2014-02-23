@@ -5,11 +5,12 @@ mod "puppetlabs/stdlib", "4.1.0"
 mod "puppetlabs/vcsrepo", "0.1.2"
 mod "puppetlabs/ruby", "0.1.0"
 mod "puppetlabs/mysql", "2.0.0"
+mod "maestrodev/rvm", "1.2.0"
 
-mod "jfryman/nginx", "0.0.5"
+mod "jfryman/nginx", "0.0.7"
 
 mod "mailcatcher",
-  :git => "git://github.com/ricksteckles/puppet-mailcatcher"
+  :git => "git://github.com/mikebell/puppet-mailcatcher"
 
 mod "xhprof",
   :git => "git://github.com/mikebell/puppet-xhprof",
@@ -28,8 +29,8 @@ mod "puppi",
   :ref => "v2.1.7"
 
 mod "composer",
-  :git => "git://github.com/puphpet/puppet-composer",
-  :ref => "1.0.0"
+  :git => "git://github.com/tPl0ch/puppet-composer",
+  :ref => "1.2.1"
 
 mod "logstash",
   :git => "git://github.com/logstash/puppet-logstash",
@@ -38,3 +39,11 @@ mod "logstash",
 mod "concat",
   :git => "git://github.com/puppetlabs/puppetlabs-concat",
   :ref => "1.1.0-rc1"
+
+mod "solr",
+  :git => "git://github.com/DarkHorseComics/puppet-solr",
+  :ref => "43059f89d4916f3f0cb43fe50fd7a6effd62f2cc"
+
+mod "automysqlbackup",
+  :git => "git://github.com/nextrevision/puppet-automysqlbackup",
+  :ref => "752b8b9d95725112e97b5b3faa15ac369399c4b0"
