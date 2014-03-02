@@ -41,8 +41,8 @@ mod "concat",
   :ref => "1.1.0-rc1"
 
 mod "solr",
-  :git => "git://github.com/DarkHorseComics/puppet-solr",
-  :ref => "43059f89d4916f3f0cb43fe50fd7a6effd62f2cc"
+  :git => "git://github.com/mikebell/puppet-solr",
+  :ref => "9bd83e19149ed01e8b064c9dee8a074049adb84e"
 
 mod "automysqlbackup",
   :git => "git://github.com/nextrevision/puppet-automysqlbackup",
