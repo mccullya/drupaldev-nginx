@@ -63,13 +63,24 @@ class { '::mysql::server':
   root_password => 'drupaldev'
 }
 
-php::pear::module { 'drush-6.2.0.0':
-  repository  => 'pear.drush.org',
+php::pear::module { 'Console_Table':
   use_package => 'no',
 }
 
-php::pear::module { 'Console_Table':
-  use_package => 'no',
+composer::project {'drush':
+  project_name => 'drush/drush',
+  target_dir => '/opt/drush',
+  version => '6.2'
+}
+
+composer::exec { 'drush-update':
+  cmd => 'update',  # REQUIRED
+  cwd => '/opt/drush', # REQUIRED
+}
+
+file {'/usr/bin/drush':
+  ensure => 'link',
+  target => '/opt/drush/drush'
 }
 
 php::ini { 'php.ini':
