@@ -39,6 +39,7 @@ Need Help? Consult the [wiki](https://github.com/mikebell/drupaldev-nginx/wiki) 
 * Sites built as *.drupal.dev (use dnsmasq)
 * Ubuntu 12.04
 * Mysql root password: drupaldev
+* For Windows users on Vagrant 1.5.0+ uncomment line 15 in Vagrantfile to use SMB sharing.
 
 #XHProf Details
 * Visible at xhprof.drupal.dev
